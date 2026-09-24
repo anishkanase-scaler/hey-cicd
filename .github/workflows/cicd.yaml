@@ -6,7 +6,7 @@ on:
       - feature/*
   workflow_dispatch:
 jobs:
-  hello:
+  anishka:
     runs-on: ubuntu-latest
     steps:
       - name: Print message
