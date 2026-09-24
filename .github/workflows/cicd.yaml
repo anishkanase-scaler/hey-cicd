@@ -1,5 +1,9 @@
 name: Hello GitHub Actions
 on:
+  push:
+    branch:
+      - main
+      - feature/*
   workflow_dispatch:
 jobs:
   hello:
@@ -13,6 +17,7 @@ jobs:
         run: uname -a
       - name: Show myself
         run: echo "Anishka"
+
 
   build:
     runs-on: ubuntu-latest
