@@ -24,3 +24,16 @@ jobs:
         run: uname -a
       - name: Show myself
         run: echo "Anishka"
+
+  build2:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Print message
+        run: echo "Hello from GitHub Actions!"
+      - name: Show date
+        run: date
+      - name: Show operating system
+        run: uname -a
+      - name: Show myself
+        run: echo "Anishka"
