@@ -13,6 +13,7 @@ jobs:
         run: uname -a
       - name: Show myself
         run: echo "Anishka"
+
   build:
     runs-on: ubuntu-latest
     steps:
@@ -37,3 +38,17 @@ jobs:
         run: uname -a
       - name: Show myself
         run: echo "Anishka"
+
+  secrets-demo:
+  runs-on: ubuntu-latest
+  steps:
+    - name: Check secret
+      env:
+        DEMO_SECRET: ${{ secrets.DEMO_SECRET }}
+      run: |
+        if [ -n "$DEMO_SECRET" ]; then
+          echo "Secret is available."
+        else
+          echo "Secret is not configured."
+          exit 1
+        fi
